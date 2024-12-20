@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "zeta4g"
+version = "0.1.0"
+description = ""
+authors = ["kangyou.choi <kangyou.choi@datastreams.co.kr>"]
+readme = "README.md"
+packages = [{include = "zeta4g", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
