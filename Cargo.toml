@@ -1,0 +1,47 @@
+[package]
+name = "zeta4g"
+version = "0.1.0"
+edition = "2021"
+authors = ["Kangyou Choi <zeta9044@gmail.com>"]
+description = "A high-performance graph database with Neo4j Cypher compatibility"
+license = "GPL V3"
+repository = "https://github.com/zeta9044/zeta4g"
+
+[dependencies]
+# 비동기 런타임
+tokio = { version = "1.36", features = ["full"] }
+
+# 직렬화/역직렬화
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# 에러 처리
+thiserror = "1.0"
+anyhow = "1.0"
+
+# 로깅
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+# 유틸리티
+async-trait = "0.1"
+parking_lot = "0.12"
+uuid = { version = "1.7", features = ["v4"] }
+
+[dev-dependencies]
+# 테스팅
+tokio-test = "0.4"
+test-case = "3.3"
+
+# 벤치마킹
+criterion = "0.5"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "unwind"
+
+[profile.dev]
+opt-level = 0
+debug = true
