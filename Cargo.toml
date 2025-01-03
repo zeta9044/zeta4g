@@ -9,7 +9,7 @@ repository = "https://github.com/zeta9044/zeta4g"
 
 [dependencies]
 # 비동기 런타임
-tokio = { version = "1.36", features = ["full"] }
+tokio = { version = "1.36", features = ["full", "macros", "rt-multi-thread"] }
 
 # 직렬화/역직렬화
 serde = { version = "1.0", features = ["derive"] }
